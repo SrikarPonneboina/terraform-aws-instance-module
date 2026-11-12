@@ -1,5 +1,10 @@
-variable "instance_type" {
+variable "instance_type" {  #optional this can be overridden
   type = string
+  default = "t3.micro"
+}
+
+variable "sg_ids" {
+  type = list(any)
 }
 
 variable "project" {
@@ -16,5 +21,5 @@ variable "component" {
 
 variable "ec2_tags" {
     type = map
-    default = {}
+    default = {} #empty
 }
